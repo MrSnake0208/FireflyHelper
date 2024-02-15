@@ -2,7 +2,7 @@
 name = "fireflyhelper"
 version = "0.1.0"
 description = "Another yas backend"
-authors = [Peide Yang <74225450+MrSnake0208@users.noreply.github.com>]
+authors = ["Peide Yang <74225450+MrSnake0208@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
