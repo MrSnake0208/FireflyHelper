@@ -4,7 +4,7 @@ from relic_processing import processRelicFromJson
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173"  # 这里是你前端的地址
+    "http://localhost:5174"  # 这里是你前端的地址
 ]
 
 app.add_middleware(

@@ -7,14 +7,23 @@
     "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsxImportSource": "vue",
     "baseUrl": "./",
+    "include": [
+      "types/*.ts",
+      "src/**/*.ts",
+      "src/**/*.d.ts",
+      "src/**/*.tsx",
+      "src/**/*.vue",
+      "images/**/*.png",
+    ],
     "paths": {
-      "@image/*": ["src/images/*"]
-    }
+      "@image/*": ["src/images/*"],
+      "@type/*": ["src/types/*"],
+    },
   }
 }
