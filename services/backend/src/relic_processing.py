@@ -161,7 +161,7 @@ def calculateRelicScore(relic_data: Relic, score_config=loadScoreConfig("黑塔"
                'def': 18.96,
                'effRes': 0.0389}
     # 基础词条系数
-    coefficient = Coefficient(hp=0.153 * 0.5, hp_=1.5, atk=0.3 * 0.5, atk_=1.5, def_value=0.3*0.5, def_=1.19 * 100,spd=2.53, crit_rate=2*100,crit_dmg=1*100,
+    coefficient = Coefficient(hp=0.153 * 0.5, hp_=1.5, atk=0.3 * 0.5, atk_=1.5 * 100, def_value=0.3*0.5, def_=1.19 * 100,spd=2.53, crit_rate=2*100,crit_dmg=1*100,
                 break_=1*100, eff=1.49*100, eff_res=1.49*100, imaginary_dmg=1, quantum_dmg=1,wind_dmg=1,lightning_dmg=1,ice_dmg=1,fire_dmg=1,
                 physical_dmg=1,heal=1,ener_regen=1)
 
@@ -199,13 +199,15 @@ def calculateRelicScore(relic_data: Relic, score_config=loadScoreConfig("黑塔"
     return relic_data
 
 
-def processRelicFromJson():
+def processRelicFromJson(relic_data):
     # 解析 JSON 数据
-    relic_data = loadJsonFile("../tests/march7th.min.json")
+    # relic_data = loadJsonFile("C:\\Users\LEGION\Documents\GitHub\FireflyHelper\\tests\\march7th.min.json")
     relic_data_new = []
-    del (relic_data["version"])
+    print(type(relic_data))
+    del(relic_data["version"])
     # 调用 calculateRelicScore 函数，传递遗器数据
     for relic_position in relic_data.values():
+        print(relic_position)
         for relic in relic_position:
             raw_relic = Relic(set_name=relic["setName"], position=relic["position"], main_tag=relic["mainTag"], normal_tags=relic["normalTags"], omit=relic["omit"], level=relic["level"], star=relic["star"], equip=relic["equip"])
             relic_data_new.append(calculateRelicScore(raw_relic).to_dict())
